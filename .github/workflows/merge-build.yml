@@ -25,12 +25,13 @@ jobs:
     
     - name: Copy to temp-directory
       run: |
-        mkdir ~/temp-directory
-        cp -r app/* ~/temp-directory/
-        git checkout gt-build
-        cp -r ~/temp-directory/* .
-        git add .
-        git commit -m "Copy main-folder to gt-build branch"
+        ls /home
+        # mkdir ~/temp-directory
+        # cp -r app/* ~/temp-directory/
+        # git checkout gt-build
+        # cp -r ~/temp-directory/* .
+        # git add .
+        # git commit -m "Copy main-folder to gt-build branch"
     
     - name: Push to gt-build
       run: |
