@@ -23,6 +23,13 @@ jobs:
         npm run build
         echo "Run build commands here"
     
+    - name: Fetch branches and create gt-build branch
+      run: |
+        git fetch origin
+        
+        # Create and checkout gt-build branch locally based on the remote branch
+        # git checkout -B gt-build origin/gt-build
+    
     - name: Copy to temp-directory
       run: |
         mkdir /tmp/temp-directory
