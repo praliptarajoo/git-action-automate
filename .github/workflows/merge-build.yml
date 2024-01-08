@@ -12,6 +12,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    
+    - name: Configure Git
+      run: |
+        git config --global user.email "praliptarajoo@github.com"
+        git config --global user.name "praliptarajoo"
 
     - name: Install dependencies
       run: |
