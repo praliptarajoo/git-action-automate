@@ -25,7 +25,8 @@ jobs:
     
     - name: Copy to temp-directory
       run: |
-        ls /home
+        mkdir /tmp/temp-directory
+        ls /tmp
         # mkdir ~/temp-directory
         # cp -r app/* ~/temp-directory/
         # git checkout gt-build
