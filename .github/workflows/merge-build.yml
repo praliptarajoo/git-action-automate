@@ -55,5 +55,6 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        echo ${{ secrets.GITHUB_TOKEN }}
         git push origin gt-build
         
