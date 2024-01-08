@@ -40,21 +40,15 @@ jobs:
         mkdir /tmp/temp-directory
         cp -r app/* /tmp/temp-directory/
         git checkout gt-build
-        pwd
+        cp -r /tmp/temp-directory/ .
+        git add .
+        git commit -m "Copy main-folder to gt-build branch"
+        ls
         echo 'Done'
-        # cp -r /tmp/temp-directory/* .
-        # ls 
-        # mkdir ~/temp-directory
-        # cp -r app/* ~/temp-directory/
-        # git checkout gt-build
-        # cp -r ~/temp-directory/* .
-        # git add .
-        # git commit -m "Copy main-folder to gt-build branch"
     
     - name: Push to gt-build
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo ${{ secrets.GITHUB_TOKEN }}
         git push origin gt-build
         
