@@ -1,0 +1,35 @@
+name: Automated Merge and Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  merge-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Configure Git
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        
+    - name: Merge main into gt-branch
+      run: |
+        git fetch origin
+        git checkout gt-branch
+        git merge --no-ff --no-edit main
+        
+    - name: Checkout code again
+      uses: actions/checkout@v2
+      with:
+        ref: gt-branch
+        
+    - name: Install dependencies and run build
+      run: |
+        # Replace with your build commands, e.g., npm install and npm run build
+        echo "Install dependencies and run build commands here"
