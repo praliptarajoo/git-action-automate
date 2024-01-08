@@ -6,30 +6,19 @@ on:
       - main
 
 jobs:
-  merge-and-build:
+  build-main:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
-    - name: Configure Git
+
+    - name: Install dependencies
       run: |
-        git config --global user.email "praliptarajoo@github.com"
-        git config --global user.name "praliptarajoo"
-        
-    - name: Merge main into gt-branch
+        # Replace with your dependency installation commands, e.g., npm install
+        echo "Install dependencies here"
+
+    - name: Run build
       run: |
-        git fetch origin
-        git checkout gt-branch
-        git merge --no-edit main --allow-unrelated-histories
-        
-    - name: Checkout code again
-      uses: actions/checkout@v2
-      with:
-        ref: gt-branch
-        
-    - name: Install dependencies and run build
-      run: |
-        # Replace with your build commands, e.g., npm install and npm run build
-        echo "Install dependencies and run build commands here"
+        # Replace with your build commands, e.g., npm run build
+        echo "Run build commands here"
