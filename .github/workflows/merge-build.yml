@@ -15,7 +15,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        # Replace with your dependency installation commands, e.g., npm install
+        npm install
         echo "Install dependencies here"
 
     - name: Run build
