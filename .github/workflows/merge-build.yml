@@ -22,7 +22,7 @@ jobs:
       run: |
         git fetch origin
         git checkout gt-branch
-        git merge --no-ff --no-edit main --allow-unrelated-histories
+        git merge --no-edit main --allow-unrelated-histories
         
     - name: Checkout code again
       uses: actions/checkout@v2
