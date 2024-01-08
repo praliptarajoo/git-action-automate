@@ -20,5 +20,5 @@ jobs:
 
     - name: Run build
       run: |
-        # Replace with your build commands, e.g., npm run build
+        npm run build
         echo "Run build commands here"
